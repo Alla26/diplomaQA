@@ -10,19 +10,29 @@ import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static org.hamcrest.Matchers.allOf;
 
+import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.ViewInteraction;
 
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.utils.Utilities;
 import static ru.iteco.fmhandroid.ui.utils.Utilities.waitDisplayed;
 
+import android.view.View;
+
+import org.hamcrest.Matcher;
+
 
 public class AuthorizationPage {
 
-    public static ViewInteraction loginField = onView(withId(R.id.login_text_input_layout));
+    /*public static ViewInteraction loginField = onView(withId(R.id.login_text_input_layout));
     private static final int loginFieldId = R.id.login_text_input_layout;
     public static ViewInteraction passwordField = onView(withId(R.id.password_text_input_layout));
-    public static ViewInteraction signInButton = onView(withId(R.id.enter_button));
+    public static ViewInteraction signInButton = onView(withId(R.id.enter_button));*/
+
+
+    private static final int loginFieldId = R.id.login_text_input_layout;
+    private static final int passwordField = R.id.password_text_input_layout;
+    private static final int signInButton = R.id.enter_button;
 
 
     public static void waitAuthorizationPage() {
@@ -32,13 +42,13 @@ public class AuthorizationPage {
 
     public static void successfulLogIn(){    //успешная авторизация с корректными данными
         Utilities utility = new Utilities();
-        AuthorizationPage.loginField.perform(typeText(utility.getValidUser().getLogin()), closeSoftKeyboard());
-        AuthorizationPage.passwordField.perform(typeText(utility.getValidUser().getPassword()), closeSoftKeyboard());
-        AuthorizationPage.signInButton.perform(click());
+        onView(withId(loginFieldId)).perform(typeText(utility.getValidUser().getLogin()), closeSoftKeyboard());
+        onView(withId(passwordField)).perform(typeText(utility.getValidUser().getPassword()), closeSoftKeyboard());
+        onView(withId(signInButton)).perform(click());
 
     }
 
-    public void UnsuccessfulLogInWrongLog(){   // ошибка авторизации с логином log
+      /* public void UnsuccessfulLogInWrongLog(){   // ошибка авторизации с логином log
         Utilities utility = new Utilities();
         AuthorizationPage.loginField.perform(typeText(utility.getNotValidUserWithWrongLogin().getLogin()), closeSoftKeyboard());
         AuthorizationPage.passwordField.perform(typeText(utility.getNotValidUserWithWrongLogin().getPassword()), closeSoftKeyboard());
@@ -93,6 +103,6 @@ public class AuthorizationPage {
 
     public void checkPopupErrorMessage(String text) {
         onView(allOf(withContentDescription(text), isDisplayed()));
-    }
+    }*/
 
 }

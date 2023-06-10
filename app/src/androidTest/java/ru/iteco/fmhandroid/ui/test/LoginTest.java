@@ -35,6 +35,7 @@ import org.junit.runner.RunWith;
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.AppActivity;
 import ru.iteco.fmhandroid.ui.pages.AuthorizationPage;
+import ru.iteco.fmhandroid.ui.pages.MainPage;
 
 @LargeTest
 @RunWith(AndroidJUnit4.class)
@@ -48,7 +49,7 @@ public class LoginTest {
     public void loginTest() {
         AuthorizationPage.waitAuthorizationPage();
         AuthorizationPage.successfulLogIn();
-
+        MainPage.logOut();
 
     }
 
