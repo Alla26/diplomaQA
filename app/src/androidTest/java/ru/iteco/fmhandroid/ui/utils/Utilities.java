@@ -5,6 +5,8 @@ import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.ViewParent;
 
 import androidx.test.espresso.PerformException;
 import androidx.test.espresso.UiController;
@@ -13,60 +15,13 @@ import androidx.test.espresso.util.HumanReadables;
 import androidx.test.espresso.util.TreeIterables;
 import java.util.concurrent.TimeoutException;
 
+import org.hamcrest.Description;
 import org.hamcrest.Matcher;
+import org.hamcrest.TypeSafeMatcher;
+
+import java.util.Random;
 
 public class Utilities {
-
-    public class User {
-        private final String login;
-        private final String password;
-
-        public User(String login, String password) {
-            this.login = login;
-            this.password = password;
-        }
-
-        public String getLogin() {
-            return login;
-        }
-
-        public String getPassword() {
-            return password;
-        }
-    }
-    public User getValidUser(){
-        return new User("login2", "password2");
-    }
-
-    public User getNotValidUserWithWrongLogin(){
-        return new User("log", "password2");
-    }
-
-    public User getNotValidUserWithWrongPassword(){
-        return new User("login2", "pass");
-    }
-
-    public User getNotValidUserWithSpaseLogin(){
-        return new User(" login2", "password2");
-    }
-
-    public User getNotValidUserWithSpasePassword(){
-        return new User("login2", " password2");
-    }
-
-    public User getNotValidUserEmptyFields(){
-        return new User("", "");
-    }
-
-    public User getNotValidUserWithCapitalLetterPassword(){
-        return new User("login2", " Password2");
-    }
-
-    public User getNotValidUserWithCapitalLetterLogin(){
-        return new User("Login2", " password2");
-    }
-
-
     public static ViewAction waitDisplayed(final int viewId, final long millis) {
         return new ViewAction() {
             @Override
@@ -106,7 +61,52 @@ public class Utilities {
                         .build();
             }
         };
-
-
     }
+
+    public static Matcher<View> childAtPosition(
+            final Matcher<View> parentMatcher, final int position) {
+
+        return new TypeSafeMatcher<View>() {
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("Child at position " + position + " in parent ");
+                parentMatcher.describeTo(description);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                ViewParent parent = view.getParent();
+                return parent instanceof ViewGroup && parentMatcher.matches(parent)
+                        && view.equals(((ViewGroup) parent).getChildAt(position));
+            }
+        };
+    }
+    public static String getRandomNewsDescription() {
+        Random random = new Random();
+        return "Коммент № " + random.nextInt(500) + "а";
+    }
+
+    public static String getRandomClaimTitle() {
+        Random random = new Random();
+        return "Новая претензия № " + random.nextInt(500);
+    }
+
+    public static Matcher<View> withIndex(final Matcher<View> matcher, final int index) {
+        return new TypeSafeMatcher<View>() {
+            int currentIndex = 0;
+
+            @Override
+            public void describeTo(Description description) {
+                description.appendText("with index: ");
+                description.appendValue(index);
+                matcher.describeTo(description);
+            }
+
+            @Override
+            public boolean matchesSafely(View view) {
+                return matcher.matches(view) && currentIndex++ == index;
+            }
+        };
+    }
+
 }
