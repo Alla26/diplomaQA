@@ -90,6 +90,7 @@ public class ClaimsTest {
            createClaimPage.addClaimDescription(description);
             createClaimPage.saveNewClaim();
             mainPage.clickMenuItem(item);
+            claimsPage.waitClaimsPage();
            // mainPage.openClaimsPage();
            claimsPage.findAddedClaim(title);
 

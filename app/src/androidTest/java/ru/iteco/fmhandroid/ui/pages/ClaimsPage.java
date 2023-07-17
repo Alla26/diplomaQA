@@ -8,10 +8,10 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withParent;
+//import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 
-import static org.hamcrest.Matchers.allOf;
+//import static org.hamcrest.Matchers.allOf;
 import static ru.iteco.fmhandroid.ui.utils.Utilities.waitDisplayed;
 import static ru.iteco.fmhandroid.ui.utils.Utilities.withIndex;
 
@@ -21,13 +21,13 @@ import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.espresso.matcher.ViewMatchers;
 
-import org.hamcrest.core.IsInstanceOf;
+//import org.hamcrest.core.IsInstanceOf;
 
 import ru.iteco.fmhandroid.R;
 
 public class ClaimsPage {
 
-    private final int allClaimsButton = R.id.all_claims_text_view;
+   // private final int allClaimsButton = R.id.all_claims_text_view;
     private final int addNewClaimButton = R.id.add_new_claim_material_button;
     private final int claimsList = R.id.claim_list_recycler_view;
     private final int claimsDescriptionField = R.id.description_material_text_view;
@@ -50,7 +50,8 @@ public class ClaimsPage {
 
       //  onView(withId(claimsList)).check(matches(isDisplayed()));
 
-      //  onView(withId(claimsList)).perform(RecyclerViewActions.scrollTo(hasDescendant(withText(title)))).check(matches(isDisplayed()));
+      // onView(withId(claimsList)).perform(RecyclerViewActions.scrollTo(hasDescendant(withText(title)))).check(matches(isDisplayed()));
     }
 
 }
+

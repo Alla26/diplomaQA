@@ -28,6 +28,7 @@ public class MainPage  {
     private final int logo = R.id.trademark_image_view;
 
 
+
     public void openNewsPage() {  //перейти с гл страницы во все новости
         onView(withId(allNewsBlock)).perform(click());
 

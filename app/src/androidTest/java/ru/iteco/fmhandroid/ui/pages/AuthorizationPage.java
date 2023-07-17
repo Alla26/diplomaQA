@@ -5,19 +5,19 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.pressImeActionButton;
 import static androidx.test.espresso.action.ViewActions.replaceText;
-import static androidx.test.espresso.action.ViewActions.typeText;
-import static androidx.test.espresso.assertion.ViewAssertions.matches;
-import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
+//import static androidx.test.espresso.action.ViewActions.typeText;
+//import static androidx.test.espresso.assertion.ViewAssertions.matches;
+//import static androidx.test.espresso.matcher.RootMatchers.withDecorView;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static androidx.test.espresso.matcher.ViewMatchers.withText;
+//import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.Matchers.allOf;
-import static org.hamcrest.Matchers.not;
+//import static org.hamcrest.Matchers.not;
 
-import androidx.test.espresso.ViewAction;
-import androidx.test.espresso.ViewInteraction;
+//import androidx.test.espresso.ViewAction;
+//import androidx.test.espresso.ViewInteraction;
 
 import ru.iteco.fmhandroid.R;
 import ru.iteco.fmhandroid.ui.utils.Utilities;
@@ -25,10 +25,10 @@ import ru.iteco.fmhandroid.ui.utils.AuthorizationData;
 import static ru.iteco.fmhandroid.ui.utils.Utilities.waitDisplayed;
 import static ru.iteco.fmhandroid.ui.utils.Utilities.childAtPosition;
 
-import android.view.View;
+//import android.view.View;
 
-import org.hamcrest.Matcher;
-import org.hamcrest.Matchers;
+//import org.hamcrest.Matcher;
+//import org.hamcrest.Matchers;
 
 
 public class AuthorizationPage {

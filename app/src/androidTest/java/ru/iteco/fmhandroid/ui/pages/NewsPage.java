@@ -36,15 +36,14 @@ public class NewsPage {
     private final int allNewsButton = R.id.all_news_text_view;
     private final int sortNewsButton = R.id.sort_news_material_button;
     private final int filterNewsButton = R.id.filter_news_material_button;
-    private final int canselFilterButton = R.id.cancel_button; //отмена фильтра
+   // private final int canselFilterButton = R.id.cancel_button; //отмена фильтра
     private final int applyFilterButton = R.id.filter_button;// применить фильтр
     private final int editNewsButton = R.id.edit_news_material_button;
-    private final int newsViaMainMenuButton = android.R.id.title;//новости через гл меню
+  //  private final int newsViaMainMenuButton = android.R.id.title;//новости через гл меню
     private final int addNewsButton = R.id.add_news_image_view;
-    private final int canselAddNewsButton = R.id.cancel_button;//отменить - не сохранять новую новость
+   // private final int canselAddNewsButton = R.id.cancel_button;//отменить - не сохранять новую новость
 
-
-    private final int descriptionTextOfNews = R.id.news_item_description_text_view;
+   // private final int descriptionTextOfNews = R.id.news_item_description_text_view;
 
     private final int newsList = R.id.news_list_recycler_view;
     private final int newsTitleField = R.id.news_item_title_text_view;
@@ -69,7 +68,6 @@ public class NewsPage {
         onView(withId(allNewsButton)).perform(click());
     }
 
-
     public void clickNewsSorting() {  //сортировать новости
         onView(withId(sortNewsButton)).perform(click());
     }
@@ -80,17 +78,20 @@ public class NewsPage {
     }
 
     public void findAddedNews(String description, int position) {  //найти добавленную новость через список всех новостей без участия фильтра
+        onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
+        onView(allOf(withId(/*newsTitleField*/newsDescriptionField), withText(description)));
+
         //onView(withId(newsList)).perform(actionOnItemAtPosition(position, click()));
        // onView(allOf(withId(descriptionTextOfNews), withText(description))).check(matches(isDisplayed()));
 
         //onViewWithTimeout(10000, withId(newsList));
         //onView(allOf(withId(descriptionTextOfNews))).check(matches(hasDescendant(withText(description))));
-
-        onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
-        onView(allOf(withId(/*newsTitleField*/newsDescriptionField), withText(description)));
     }
 
     public void checkNewsCategory(String title, int position) {  //проверить категорию новости в списке
+        onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
+        onView(allOf(withId(newsTitleField), withText(title))).check(matches(withText(title)));
+
         /*ViewInteraction textView = onView(
                 allOf(withId(R.id.news_item_title_text_view), withText(title),
                         withParent(withParent(withId(R.id.news_item_material_card_view))),
@@ -99,9 +100,6 @@ public class NewsPage {
 
       // onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
         /*  textView.check(matches(withText(title)));*/
-
-         onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
-        onView(allOf(withId(newsTitleField), withText(title))).check(matches(withText(title)));
     }
     public void waitNewsPage() {
         onView(isRoot()).perform(waitDisplayed(newsList, 5000));

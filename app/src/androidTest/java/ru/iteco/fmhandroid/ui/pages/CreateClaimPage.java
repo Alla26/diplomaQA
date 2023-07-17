@@ -30,9 +30,9 @@ public class CreateClaimPage {
     private final int titleField = R.id.title_edit_text;//заголовок претензии
     private final int executorField = com.google.android.material.R.id.text_input_end_icon;//исполнитель претензии
     private final int dateField = R.id.date_in_plan_text_input_edit_text;//выбор даты
-    private final int okButtonDate = android.R.id.button1; //кнопка ОК при выборе даты
+    private final int okButton = android.R.id.button1; //кнопка ОК
+  //  private final int okButtonTime = android.R.id.button1; //кнопка ОК при выборе времени
     private final int timeField = R.id.time_in_plan_text_input_edit_text;//выбор времени
-    private final int okButtonTime = android.R.id.button1; //кнопка ОК при выборе времени
     private final int descriptionField = R.id.description_edit_text;//описание
     private final int saveButton = R.id.save_button;//кнопка сохранить
 
@@ -59,12 +59,12 @@ public class CreateClaimPage {
 
     public void addClaimCurrentDate() {        //выбрать текущую дату претензии для простоты
         onView((withId(dateField))).perform(click());
-        onView((withId(okButtonDate))).perform(click());
+        onView((withId(okButton))).perform(click());
     }
 
     public void addClaimCurrentTime() {        //выбрать текущее время претензии для простоты
         onView((withId(timeField))).perform(click());
-        onView((withId(okButtonDate))).perform(click());
+        onView((withId(okButton))).perform(click());
     }
 
     public void addClaimInvalidDate(String date) {        //добавить некорректную дату

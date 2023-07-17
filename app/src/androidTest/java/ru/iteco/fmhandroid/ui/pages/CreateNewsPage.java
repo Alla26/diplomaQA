@@ -30,15 +30,15 @@ import ru.iteco.fmhandroid.R;
 public class CreateNewsPage {
 
 
-    private final int canselAddNewsButton = R.id.cancel_button;//отменить - не сохранять новую новость
+   // private final int canselAddNewsButton = R.id.cancel_button;//отменить - не сохранять новую новость
     private final int saveNewsButton = R.id.save_button;   //сохранить новую новость
     private final int categoryButton = com.google.android.material.R.id.text_input_end_icon;//кнопка выпадающего меню категория
     private final int titleField = R.id.news_item_title_text_input_edit_text;//поле для залоговка
     private final int datePublication = R.id.news_item_publish_date_text_input_edit_text;//дата публикации
     private final int timePublication = R.id.news_item_publish_time_text_input_edit_text;//время публикации
     private final int descriptionField = R.id.news_item_description_text_input_edit_text;//поле для описания новости
-    private final int okButtonDate = android.R.id.button1; //кнопка ОК при выборе даты
-    private final int okButtonTime = android.R.id.button1; //кнопка ОК при выборе времени
+    private final int okButton = android.R.id.button1; //кнопка ОК
+   // private final int okButtonTime = android.R.id.button1; //кнопка ОК при выборе времени
 
     public void waitCreateNewsPage() {
         onView(isRoot()).perform(waitDisplayed(titleField, 5000));
@@ -53,7 +53,7 @@ public class CreateNewsPage {
 
     public void addNewsCurrentDate() {        //выбрать текущую дату новости для простоты
         onView((withId(datePublication))).perform(click());
-        onView((withId(okButtonDate))).perform(click());
+        onView((withId(okButton))).perform(click());
     }
 
     public void addNewsInvalidDate(String date) {        //добавить некорректную дату
@@ -73,7 +73,7 @@ public class CreateNewsPage {
 
     public void addNewsCurrentTime() {        //выбрать текущего времени новости для простоты
         onView((withId(timePublication))).perform(click());
-        onView((withId(okButtonTime))).perform(click());
+        onView((withId(okButton))).perform(click());
     }
 
     public void addNewsDescription(String description) {        //добавление описания новой новости
