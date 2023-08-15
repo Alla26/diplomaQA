@@ -1,0 +1,61 @@
+{
+    "name": "addNewNewsCurrentDataMainMenuTest",
+    "start": 1692016931062,
+    "stop": 1692016945110,
+    "stage": "finished",
+    "description": "Создание новой новости с текущей датой и временем через вкладку Главное меню мобильного приложения Мобильный хоспис (Позитивный)",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "0c1207f9-c9d5-4896-bb75-fb86b9fce32e",
+    "historyId": "4c62ce10a78155fd7cfb496f98408b70",
+    "fullName": "ru.iteco.fmhandroid.ui.test.NewsTest.addNewNewsCurrentDataMainMenuTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.NewsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "addNewNewsCurrentDataMainMenuTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.NewsTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(69)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "11. Добавление новой новости с текущей датой и временем через Главное меню"
+        },
+        {
+            "name": "epic",
+            "value": "Тест-кейсы для проведения функционального тестирования вкладки Новости мобильного приложения Мобильный хоспис"
+        }
+    ]
+}

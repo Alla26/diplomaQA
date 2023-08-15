@@ -20,35 +20,36 @@ public class AuthorizationData {
             return password;
         }
     }
-    public User getValidUser(){
+
+    public User getValidUser() {
         return new User("login2", "password2");
     }
 
-    public User getNotValidUserWithWrongLogin(){
+    public User getNotValidUserWithWrongLogin() {
         return new User("log", "password2");
     }
 
-    public User getNotValidUserWithWrongPassword(){
+    public User getNotValidUserWithWrongPassword() {
         return new User("login2", "pass");
     }
 
-    public User getNotValidUserWithSpaseLogin(){
+    public User getNotValidUserWithSpaseLogin() {
         return new User(" login2", "password2");
     }
 
-    public User getNotValidUserWithSpasePassword(){
+    public User getNotValidUserWithSpasePassword() {
         return new User("login2", " password2");
     }
 
-    public User getNotValidUserEmptyFields(){
+    public User getNotValidUserEmptyFields() {
         return new User("", "");
     }
 
-    public User getNotValidUserWithCapitalLetterPassword(){
+    public User getNotValidUserWithCapitalLetterPassword() {
         return new User("login2", "Password2");
     }
 
-    public User getNotValidUserWithCapitalLetterLogin(){
+    public User getNotValidUserWithCapitalLetterLogin() {
         return new User("Login2", "password2");
     }
 

@@ -1,0 +1,61 @@
+{
+    "name": "failedAuthorizationCapsLoginTest",
+    "start": 1692018524282,
+    "stop": 1692018531198,
+    "stage": "finished",
+    "description": "Неудачная попытка авторизации невалидным логином с Заглавной буквы Login2 и валидным паролем password2 через страницу авторизации мобильного приложения Мобильный хоспис (Негативный)",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "45f74d62-5a0d-4eab-a256-6c246cf3555d",
+    "historyId": "c47adfe768a12c6ef8461cc22e86a5e1",
+    "fullName": "ru.iteco.fmhandroid.ui.test.LoginTest.failedAuthorizationCapsLoginTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.LoginTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "failedAuthorizationCapsLoginTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.LoginTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(69)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "9. Неудачная попытка авторизации невалидным логином с Заглавной буквы и валидным паролем"
+        },
+        {
+            "name": "epic",
+            "value": "Тест-кейсы для проведения функционального тестирования авторизации и выхода из личного кабинета мобильного приложения Мобильный хоспис"
+        }
+    ]
+}

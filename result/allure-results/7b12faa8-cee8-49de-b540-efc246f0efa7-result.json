@@ -1,0 +1,61 @@
+{
+    "name": "addNewClaimCurrentDataTest",
+    "start": 1692018399603,
+    "stop": 1692018414274,
+    "stage": "finished",
+    "description": "Создание новой претензии с текущей датой и временем во вкладке Претензии мобильного приложения Мобильный хоспис (Позитивный)",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "7b12faa8-cee8-49de-b540-efc246f0efa7",
+    "historyId": "e1da0e4760c0e47396c954d2635cff2b",
+    "fullName": "ru.iteco.fmhandroid.ui.test.ClaimsTest.addNewClaimCurrentDataTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.ClaimsTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "addNewClaimCurrentDataTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.ClaimsTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(69)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "15. Добавление новой претензии с текущей датой и временем"
+        },
+        {
+            "name": "epic",
+            "value": "Тест-кейсы для проведения функционального тестирования вкладки Претензии мобильного приложения Мобильный хоспис"
+        }
+    ]
+}

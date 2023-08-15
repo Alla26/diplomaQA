@@ -1,0 +1,61 @@
+{
+    "name": "openingQuoteTest",
+    "start": 1692018761910,
+    "stop": 1692018772054,
+    "stage": "finished",
+    "description": "Открытие цитаты в развернутом виде во вкладке Цитаты мобильного приложения Мобильный хоспис(Позитивный)",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "91e8119f-8119-4c98-b32c-4fb8ad449335",
+    "historyId": "86a473dcfe4d9ab82963501d12c4a32a",
+    "fullName": "ru.iteco.fmhandroid.ui.test.QuotesTest.openingQuoteTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.QuotesTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "openingQuoteTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.QuotesTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(69)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "21. Открытие цитаты"
+        },
+        {
+            "name": "epic",
+            "value": "Тест-кейс для проведения функционального тестирования вкладки Цитаты мобильного приложения Мобильный хоспис"
+        }
+    ]
+}

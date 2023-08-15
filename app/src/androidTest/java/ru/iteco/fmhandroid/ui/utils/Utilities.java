@@ -13,13 +13,13 @@ import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.espresso.util.HumanReadables;
 import androidx.test.espresso.util.TreeIterables;
-import java.util.concurrent.TimeoutException;
 
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
 
 import java.util.Random;
+import java.util.concurrent.TimeoutException;
 
 public class Utilities {
     public static ViewAction waitDisplayed(final int viewId, final long millis) {
@@ -81,6 +81,7 @@ public class Utilities {
             }
         };
     }
+
     public static String getRandomNewsDescription() {
         Random random = new Random();
         return "Коммент № " + random.nextInt(500) + "а";
