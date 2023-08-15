@@ -80,17 +80,13 @@ public class NewsPage {
      /*   onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
         onView(allOf(withId(newsTitleField), withText(title))).check(matches(withText(title)));*/
 
-        ViewInteraction textView = onView(withIndex(withId(newsPreview), position)).check(matches(isDisplayed()));
-        textView.check(matches(withText(title)));
-
-         /*ViewInteraction textView = onView(
-                allOf(withId(R.id.news_item_title_text_view), withText(title),
-                        withParent(withParent(withId(R.id.news_item_material_card_view))),
-                        isDisplayed()));
+      /*  ViewInteraction textView = onView(withIndex(withId(newsPreview), position)).check(matches(isDisplayed()));
         textView.check(matches(withText(title)));*/
 
-        // onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
-        /*  textView.check(matches(withText(title)));*/
+        ViewInteraction textView = onView(
+                allOf(withIndex(withId(newsTitleField), position),
+                        isDisplayed()));
+        textView.check(matches(withText(title)));
     }
 
     @Step("Ожидание загрузки вкладки Новости")

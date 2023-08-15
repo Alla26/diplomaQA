@@ -1,0 +1,61 @@
+{
+    "name": "successfulLogOutTest",
+    "start": 1692104752493,
+    "stop": 1692104761616,
+    "stage": "finished",
+    "description": "Удачная попытка выхода из личного кабинета с помощью иконки ЛК мобильного приложения Мобильный хоспис (Позитивный)",
+    "descriptionHtml": null,
+    "status": "passed",
+    "statusDetails": null,
+    "steps": [
+    ],
+    "attachments": [
+    ],
+    "parameters": [
+    ],
+    "uuid": "4b042231-cf39-4522-9dec-2b955129fb66",
+    "historyId": "715dc7bb13b624dc794b7bd8616ced75",
+    "fullName": "ru.iteco.fmhandroid.ui.test.LoginTest.successfulLogOutTest",
+    "labels": [
+        {
+            "name": "package",
+            "value": "ru.iteco.fmhandroid.ui.test"
+        },
+        {
+            "name": "testClass",
+            "value": "ru.iteco.fmhandroid.ui.test.LoginTest"
+        },
+        {
+            "name": "testMethod",
+            "value": "successfulLogOutTest"
+        },
+        {
+            "name": "suite",
+            "value": "ru.iteco.fmhandroid.ui.test.LoginTest"
+        },
+        {
+            "name": "host",
+            "value": "localhost"
+        },
+        {
+            "name": "thread",
+            "value": "Instr: androidx.test.runner.AndroidJUnitRunner(66)"
+        },
+        {
+            "name": "framework",
+            "value": "junit4"
+        },
+        {
+            "name": "language",
+            "value": "kotlin"
+        },
+        {
+            "name": "story",
+            "value": "2. Удачная попытка выхода из личного кабинета"
+        },
+        {
+            "name": "epic",
+            "value": "Тест-кейсы для проведения функционального тестирования авторизации и выхода из личного кабинета мобильного приложения Мобильный хоспис"
+        }
+    ]
+}
