@@ -25,12 +25,9 @@ import ru.iteco.fmhandroid.ui.utils.Utilities;
 
 
 @LargeTest
-//@RunWith(AndroidJUnit4.class)
 @RunWith(AllureAndroidJUnit4.class)
 @Epic("Тест-кейсы для проведения функционального тестирования вкладки Претензии мобильного приложения Мобильный хоспис")
 public class ClaimsTest {
-
-    // private final String title = "Претензия rrr";
     private final String item = "Claims";
     private final String invalidDate = "01.01.0001";
     private final String invalidTime = "25:70";
@@ -52,18 +49,6 @@ public class ClaimsTest {
 
     @Before
     public void setUp() {
-      /*  try {
-            authorizationPage.waitAuthorizationPage();
-            authorizationPage.clickForLoginField();
-            authorizationPage.inputTextForLoginField();
-            authorizationPage.clickForPasswordField();
-            authorizationPage.inputTextForPasswordField();
-            authorizationPage.clickForSignInField();
-            mainPage.waitMainPage();
-        } catch (Exception e) {
-            mainPage.waitMainPage();
-        }
-    }*/
         try {
             mainPage.waitMainPage();
         } catch (Exception e) {
@@ -77,12 +62,6 @@ public class ClaimsTest {
         }
     }
 
-    /*   @After
-       public void tearDown(){
-           mainPage.waitLogOutImage();
-           mainPage.logOut();
-           mainPage.clickLogOutButton();
-       }*/
     @Story("15. Добавление новой претензии с текущей датой и временем")
     @Description("Создание новой претензии с текущей датой и временем во вкладке Претензии мобильного приложения Мобильный хоспис (Позитивный)")
     @Test
@@ -98,22 +77,7 @@ public class ClaimsTest {
         createClaimPage.saveNewClaim();
         mainPage.clickMenuItem(item);
         claimsPage.waitClaimsPage();
-        // mainPage.openClaimsPage();
         claimsPage.findAddedClaim(title);
-
-
-           /* String description = utility.getRandomNewsDescription();
-            claimsPage.addNewClaim();
-            createClaimPage.addClaimTitle(title);
-            createClaimPage.chooseExecutor();
-            createClaimPage.addClaimCurrentDate();
-            createClaimPage.addClaimCurrentTime();
-            createClaimPage.addClaimDescription(description);
-            createClaimPage.saveNewClaim();
-            mainPage.clickMenuItem(item);
-            claimsPage.waitClaimsPage();
-            // claimsPage.findAddedClaim(title,0);
-            claimsPage.findAddedClaim(description,0);*/
     }
 
     @Story("16. Добавление новой претензии с текущей датой и временем через Главное меню")
@@ -130,8 +94,6 @@ public class ClaimsTest {
         createClaimPage.addClaimCurrentTime();
         createClaimPage.addClaimDescription(description);
         createClaimPage.saveNewClaim();
-        // mainPage.clickMenuItem(item);
-        // mainPage.openClaimsPage();
         claimsPage.findAddedClaim(title);
     }
 
@@ -166,6 +128,5 @@ public class ClaimsTest {
         createClaimPage.saveNewClaim();
         createClaimPage.checkToastErrorMessage(errorMessageWrongTime, decorView);
     }
-
 
 }

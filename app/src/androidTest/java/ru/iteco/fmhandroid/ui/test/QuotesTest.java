@@ -19,7 +19,6 @@ import ru.iteco.fmhandroid.ui.pages.MainPage;
 import ru.iteco.fmhandroid.ui.pages.QuotesPage;
 
 @LargeTest
-//@RunWith(AndroidJUnit4.class)
 @RunWith(AllureAndroidJUnit4.class)
 
 @Epic("Тест-кейс для проведения функционального тестирования вкладки Цитаты мобильного приложения Мобильный хоспис")
@@ -38,19 +37,6 @@ public class QuotesTest {
 
     @Before
     public void setUp() {
-       /* try {
-            authorizationPage.waitAuthorizationPage();
-            authorizationPage.clickForLoginField();
-            authorizationPage.inputTextForLoginField();
-            authorizationPage.clickForPasswordField();
-            authorizationPage.inputTextForPasswordField();
-            authorizationPage.clickForSignInField();
-            mainPage.waitMainPage();
-        } catch (Exception e) {
-            mainPage.waitMainPage();
-        }
-    }*/
-
         try {
             mainPage.waitMainPage();
         } catch (Exception e) {
@@ -64,12 +50,6 @@ public class QuotesTest {
         }
     }
 
-    /*@After
-    public void tearDown(){
-        mainPage.waitLogOutImage();
-        mainPage.logOut();
-        mainPage.clickLogOutButton();
-    }*/
     @Story("21. Открытие цитаты")
     @Description("Открытие цитаты в развернутом виде во вкладке Цитаты мобильного приложения Мобильный хоспис(Позитивный)")
     @Test

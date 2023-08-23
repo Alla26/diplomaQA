@@ -25,7 +25,6 @@ import ru.iteco.fmhandroid.ui.utils.Utilities;
 
 
 @LargeTest
-//@RunWith(AndroidJUnit4.class)
 @RunWith(AllureAndroidJUnit4.class)
 @Epic("Тест-кейсы для проведения функционального тестирования вкладки Новости мобильного приложения Мобильный хоспис")
 public class NewsTest {
@@ -53,19 +52,6 @@ public class NewsTest {
     @Before
 
     public void setUp() {
-          /*  try {
-                authorizationPage.waitAuthorizationPage();
-                authorizationPage.clickForLoginField();
-                authorizationPage.inputTextForLoginField();
-                authorizationPage.clickForPasswordField();
-                authorizationPage.inputTextForPasswordField();
-                authorizationPage.clickForSignInField();
-                mainPage.waitMainPage();
-            } catch (Exception e) {
-                mainPage.waitMainPage();
-            }
-        }*/
-
         try {
             mainPage.waitMainPage();
         } catch (Exception e) {
@@ -78,13 +64,6 @@ public class NewsTest {
             mainPage.waitMainPage();
         }
     }
-
-    /*  @After
-      public void tearDown(){
-          mainPage.waitLogOutImage();
-          mainPage.logOut();
-          mainPage.clickLogOutButton();
-      }*/
     @Story("10. Добавление новой новости с текущей датой и временем")
     @Description("Создание новой новости с текущей датой и временем во вкладке Новости мобильного приложения Мобильный хоспис (Позитивный)")
     @Test
@@ -100,7 +79,6 @@ public class NewsTest {
         createNewsPage.saveNewNews();
         mainPage.clickMenuItem(item);
         newsPage.waitNewsPage();
-        // newsPage.sortNewsList();
         newsPage.findAddedNews(description, 0);
     }
 
@@ -109,7 +87,6 @@ public class NewsTest {
     @Test
     public void addNewNewsCurrentDataMainMenuTest() {   //добавление новой новости через главное меню с текущей датой и временем
         String descriptionTwo = utility.getRandomNewsDescription();
-        //mainPage.waitMainPage();
         mainPage.clickMenuItem(item);
         newsPage.clickEditNews();
         newsPage.addNewNews();
@@ -120,7 +97,6 @@ public class NewsTest {
         createNewsPage.saveNewNews();
         mainPage.clickMenuItem(item);
         newsPage.waitNewsPage();
-        // newsPage.sortNewsList();
         newsPage.findAddedNews(descriptionTwo, 0);
     }
 

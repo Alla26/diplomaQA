@@ -15,20 +15,14 @@ import static ru.iteco.fmhandroid.ui.utils.Utilities.withIndex;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.matcher.RootMatchers;
 
-import io.qameta.allure.kotlin.Step;
+import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 
 public class NewsPage {
-    private final int allNewsButton = R.id.all_news_text_view;
-    private final int sortNewsButton = R.id.sort_news_material_button;
     private final int filterNewsButton = R.id.filter_news_material_button;
-    // private final int canselFilterButton = R.id.cancel_button; //отмена фильтра
     private final int applyFilterButton = R.id.filter_button;// применить фильтр
     private final int editNewsButton = R.id.edit_news_material_button;
-    //  private final int newsViaMainMenuButton = android.R.id.title;//новости через гл меню
     private final int addNewsButton = R.id.add_news_image_view;
-
-    // private final int descriptionTextOfNews = R.id.news_item_description_text_view;
     private final int newsList = R.id.news_list_recycler_view;
     private final int newsTitleField = R.id.news_item_title_text_view;  //поле заголовка новости
     private final int newsDescriptionField = R.id.news_item_description_text_view;
@@ -36,86 +30,61 @@ public class NewsPage {
     private final int categoryButtonOfFilter = com.google.android.material.R.id.text_input_end_icon;
 
 
-    @Step("Добавить новую Новость")
     public void addNewNews() {
+        Allure.step("Добавить новую Новость");
         onView(withId(addNewsButton)).perform(click());
     }
 
-    @Step("Перейти в редактирование Новостей")
     public void clickEditNews() {
+        Allure.step("Перейти в редактирование Новостей");
         onView(withId(editNewsButton)).perform(click());
     }
 
-    @Step("Нажать на кнопку Фильтрация новостей")
     public void filterNewsButton() {
+        Allure.step("Нажать на кнопку Фильтрация новостей");
         onView(withId(filterNewsButton)).perform(click());
     }
-
-    /*public void clickAllNews() {  //перейти во все новости
-         onView(withId(allNewsButton)).perform(click());
-     }
-
-     public void clickNewsSorting() {  //сортировать новости
-         onView(withId(sortNewsButton)).perform(click());
-     }
-
-     public void sortNewsList() {  //сортировать новости
-         onView(withId(sortNewsButton)).perform(click());
-         onView(withId(sortNewsButton)).perform(click());
-     }*/
-    @Step("Найти добавленную новость через Cписок всех новостей")
     public void findAddedNews(String description, int position) {
+        Allure.step("Найти добавленную новость через Cписок всех новостей");
         onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
-        onView(allOf(withId(/*newsTitleField*/newsDescriptionField), withText(description)));
-
-        //onView(withId(newsList)).perform(actionOnItemAtPosition(position, click()));
-        // onView(allOf(withId(descriptionTextOfNews), withText(description))).check(matches(isDisplayed()));
-
-        //onViewWithTimeout(10000, withId(newsList));
-        //onView(allOf(withId(descriptionTextOfNews))).check(matches(hasDescendant(withText(description))));
+        onView(allOf(withId(newsDescriptionField), withText(description)));
     }
 
-    @Step("Проверить категорию новости в Списке")
     public void checkNewsCategory(String title, int position) {
-     /*   onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
-        onView(allOf(withId(newsTitleField), withText(title))).check(matches(withText(title)));*/
-
-      /*  ViewInteraction textView = onView(withIndex(withId(newsPreview), position)).check(matches(isDisplayed()));
-        textView.check(matches(withText(title)));*/
-
+        Allure.step("Проверить категорию новости в Списке");
         ViewInteraction textView = onView(
                 allOf(withIndex(withId(newsTitleField), position),
                         isDisplayed()));
         textView.check(matches(withText(title)));
     }
 
-    @Step("Ожидание загрузки вкладки Новости")
     public void waitNewsPage() {
+        Allure.step("Ожидание загрузки вкладки Новости");
         onView(isRoot()).perform(waitDisplayed(newsList, 5000));
     }
 
-    @Step("Выбрать категорию новости {title} в Фильтре")
     public void chooseCategoryOfNews(String title) {
+        Allure.step("Выбрать категорию новости " + title + " в Фильтре");
         onView(allOf(withId(categoryButtonOfFilter), withContentDescription("Show dropdown menu"))).perform(click());
         onView(withText(title))
                 .inRoot(RootMatchers.isPlatformPopup())
                 .perform(click());
     }
 
-    @Step("Выбрать начало интервала для Фильтра (текущая дата)")
     public void selectTheBeginningOfTheIntervalForTheFilter() {
+        Allure.step("Выбрать начало интервала для Фильтра (текущая дата)");
         onView((withId(R.id.news_item_publish_date_start_text_input_edit_text))).perform(click());
         onView((withId(android.R.id.button1))).perform(click());
     }
 
-    @Step("Выбрать конец интервала для Фильтра (текущая дата)")
     public void selectTheEndOfTheIntervalForTheFilter() {
+        Allure.step("Выбрать конец интервала для Фильтра (текущая дата)");
         onView((withId(R.id.news_item_publish_date_end_text_input_edit_text))).perform(click());
         onView((withId(android.R.id.button1))).perform(click());
     }
 
-    @Step("Нажать на кнопку Применить фильтр")
     public void clickFilterNewsButton() {
+        Allure.step("Нажать на кнопку Применить фильтр");
         onView(withId(applyFilterButton)).perform(click());
     }
 }

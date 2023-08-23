@@ -20,14 +20,12 @@ import ru.iteco.fmhandroid.ui.pages.MainPage;
 
 
 @LargeTest
-//@RunWith(AndroidJUnit4.class)
 @RunWith(AllureAndroidJUnit4.class)
 @Epic("Тест-кейсы для проведения функционального тестирования авторизации и выхода из личного кабинета мобильного приложения Мобильный хоспис")
 public class LoginTest {
 
     private final MainPage mainPage = new MainPage();
     private final AuthorizationPage authorizationPage = new AuthorizationPage();
-
 
     @Rule
     public ActivityScenarioRule<AppActivity> mActivityScenarioRule =

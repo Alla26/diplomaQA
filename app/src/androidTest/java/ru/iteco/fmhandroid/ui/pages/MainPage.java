@@ -10,7 +10,7 @@ import static ru.iteco.fmhandroid.ui.utils.Utilities.waitDisplayed;
 
 import androidx.test.espresso.matcher.RootMatchers;
 
-import io.qameta.allure.kotlin.Step;
+import io.qameta.allure.kotlin.Allure;
 import ru.iteco.fmhandroid.R;
 
 public class MainPage {
@@ -19,51 +19,43 @@ public class MainPage {
     private final int logOutButton = android.R.id.title;
     private final int logOutImage = R.id.authorization_image_button;
     private final int allNewsBlock = R.id.all_news_text_view;
-    private final int allClaimsBlock = R.id.all_claims_text_view;
     private final int logo = R.id.trademark_image_view;
 
-    @Step("Переход с главной страницы во вкладку Все новости")
     public void openNewsPage() {
+        Allure.step("Переход с главной страницы во вкладку Все новости");
         onView(withId(allNewsBlock)).perform(click());
     }
 
-    @Step("Переход с главной страницы во вкладку Все претензии")
-    public void openClaimsPage() {
-        onView(withId(allClaimsBlock)).perform(click());
-    }
-
-    @Step("Переход с главной страницы во вкладку Цитаты")
     public void openQuotesPage() {
+        Allure.step("Переход с главной страницы во вкладку Цитаты");
         onView(withId(quotesButton)).perform(click());
     }
 
-    @Step("Нажатие на иконку ЛК")
     public void logOut() {
+        Allure.step("Нажатие на иконку ЛК");
         onView(withId(logOutImage)).perform(click());
     }
 
-    @Step("Выход из профиля")
     public void clickLogOutButton() {
+        Allure.step("Выход из профиля");
         onView(withId(logOutButton)).perform(click());
     }
 
-    @Step("Ожидание загрузки вкладки Главная страница")
     public void waitMainPage() {
+        Allure.step("Ожидание загрузки вкладки Главная страница");
         onView(isRoot()).perform(waitDisplayed(logo, 5000));
     }
 
-    @Step("Ожидание загрузки иконки ЛК")
     public void waitLogOutImage() {
+        Allure.step("Ожидание загрузки иконки ЛК");
         onView(isRoot()).perform(waitDisplayed(logOutImage, 5000));
     }
 
-    @Step("Клик по заданному пункту меню {item}")
     public void clickMenuItem(String item) {
+        Allure.step("Клик по заданному пункту меню " + item);
         onView(withId(mainMenu)).perform(click());
         onView(withText(item))
                 .inRoot(RootMatchers.isPlatformPopup())
                 .perform(click());
     }
-
-
 }

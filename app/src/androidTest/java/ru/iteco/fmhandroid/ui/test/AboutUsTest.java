@@ -30,7 +30,6 @@ import ru.iteco.fmhandroid.ui.pages.AuthorizationPage;
 import ru.iteco.fmhandroid.ui.pages.MainPage;
 
 @LargeTest
-//@RunWith(AndroidJUnit4.class)
 @RunWith(AllureAndroidJUnit4.class)
 @Epic("Тест-кейсы для проведения функционального тестирования вкладки О приложении мобильного приложения Мобильный хоспис")
 public class AboutUsTest {
@@ -48,25 +47,8 @@ public class AboutUsTest {
     public ScreenshotRule screenshotRule = new ScreenshotRule(ScreenshotRule.Mode.FAILURE,
             String.valueOf(System.currentTimeMillis()));
 
-
-   /* @Before
-    public void setUp() {
-        try {
-            authorizationPage.waitAuthorizationPage();
-            authorizationPage.clickForLoginField();
-            authorizationPage.inputTextForLoginField();
-            authorizationPage.clickForPasswordField();
-            authorizationPage.inputTextForPasswordField();
-            authorizationPage.clickForSignInField();
-            mainPage.waitMainPage();
-        } catch (Exception e) {
-            mainPage.waitMainPage();
-        }
-    }*/
-
     @Before
     public void setUp() {
-       // Intents.init();
         try {
             mainPage.waitMainPage();
         } catch (Exception e) {
@@ -80,14 +62,6 @@ public class AboutUsTest {
         }
     }
 
-    /* @After
-     public void tearDown(){
-     Intents.release();
-         mainPage.waitLogOutImage();
-         mainPage.logOut();
-         mainPage.clickLogOutButton();
-        // Intents.release();
-     }*/
     @Story("19. Переход по ссылке Политика конфиденциальности")
     @Description("Перейти по ссылке Политика конфиденциальности во вкладке О приложении мобильного приложения Мобильный хоспис и дождаться загрузки информации (Позитивный)")
     @Test
