@@ -46,7 +46,7 @@ public class NewsPage {
     }
     public void findAddedNews(String description, int position) {
         Allure.step("Найти добавленную новость через Cписок всех новостей");
-        onView(withIndex(withId(newsPreview), 1)).check(matches(isDisplayed()));
+        onView(withIndex(withId(newsPreview), position)).check(matches(isDisplayed()));
         onView(allOf(withId(newsDescriptionField), withText(description)));
     }
 
